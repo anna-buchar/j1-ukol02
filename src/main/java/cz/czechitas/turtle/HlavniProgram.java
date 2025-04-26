@@ -61,6 +61,7 @@ public class HlavniProgram {
         nakresliKruznici(polomerKruznice/2);
         */
 
+
         //masinka
         double prvniRozmer = 100;
         double druhyRozmer = prvniRozmer*1.5;
