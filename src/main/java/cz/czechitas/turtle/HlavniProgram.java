@@ -18,6 +18,7 @@ public class HlavniProgram {
         double delkaRamen = 60;
         double delkaZakladny = 80;
 
+        /*
         //zmrzlina
         double polomerKruznice = 80;
         double delkaStranyTrojuhelniku = polomerKruznice*2;
@@ -26,6 +27,37 @@ public class HlavniProgram {
         zofka.move((polomerKruznice/3)*2);
         zofka.turnLeft(180);
         nakresliRovnostrannyTrojuhelnik(delkaStranyTrojuhelniku);
+         */
+
+        //snehulak
+        //velikost spodni koule:
+        double polomerKruznice = 90;
+        zofka.penUp();
+        zofka.turnRight(180);
+        zofka.move(polomerKruznice*2);
+        zofka.turnRight(180);
+        //strednikoule
+        nakresliKruznici(polomerKruznice);
+        zofka.penUp();
+        zofka.move(polomerKruznice*2);
+        nakresliKruznici((polomerKruznice/3)*2);
+        //rucicky
+        zofka.penUp();
+        zofka.move((polomerKruznice/3)*2);
+        zofka.turnRight(90);
+        zofka.move((polomerKruznice/3)*2);
+        nakresliKruznici(polomerKruznice/5);
+        zofka.penUp();
+        zofka.turnRight(180);
+        zofka.move((polomerKruznice/3)*4);
+        nakresliKruznici(polomerKruznice/5);
+        zofka.penUp();
+        zofka.turnRight(180);
+        zofka.move((polomerKruznice/3)*2);
+        zofka.turnLeft(90);
+        zofka.move((polomerKruznice/3)*2);
+        //hlava
+        nakresliKruznici(polomerKruznice/2);
 
     }
 
@@ -40,6 +72,7 @@ public class HlavniProgram {
         zofka.move(polomerKruznice/8);
         zofka.turnRight(90);
     }
+
 
     public void nakresliRovnostrannyTrojuhelnik (double delkaStranyRovnostrannehoTrojuhelniku) { //nejdelsi nazev promenne ever
         //trojuhelnik se kresli od prostredka zakladny a Zofka konci v pozici, v jake zacinala, otocena nahoru
