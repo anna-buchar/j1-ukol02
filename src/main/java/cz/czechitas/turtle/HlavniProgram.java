@@ -29,6 +29,7 @@ public class HlavniProgram {
         nakresliRovnostrannyTrojuhelnik(delkaStranyTrojuhelniku);
          */
 
+        /*
         //snehulak
         //velikost spodni koule:
         double polomerKruznice = 90;
@@ -58,7 +59,51 @@ public class HlavniProgram {
         zofka.move((polomerKruznice/3)*2);
         //hlava
         nakresliKruznici(polomerKruznice/2);
+        */
 
+        //masinka
+        double prvniRozmer = 100;
+        double druhyRozmer = prvniRozmer*1.5;
+        //uprava zacatecni pozice, aby se masinka lepe vesla
+        zofka.penUp();
+        zofka.turnRight(90);
+        zofka.move(druhyRozmer);
+        zofka.turnRight(90);
+        zofka.move(prvniRozmer);
+        zofka.turnLeft(180);
+        //zadni cast
+        zofka.turnLeft(90);
+        nakresliKruznici(prvniRozmer/2);
+        zofka.turnRight(90);
+        nakresliObdelnik(prvniRozmer, druhyRozmer);
+        //stredni cast
+        zofka.penUp();
+        zofka.turnLeft(90);
+        zofka.move(prvniRozmer);
+        zofka.turnRight(90);
+        zofka.move(druhyRozmer/2);
+        zofka.turnLeft(90);
+        nakresliObdelnik(druhyRozmer/2, druhyRozmer);
+        //pluh
+        zofka.penUp();
+        zofka.move(druhyRozmer);
+        zofka.turnLeft(90);
+        zofka.move(druhyRozmer/2);
+        zofka.move(druhyRozmer/4);
+        zofka.turnRight(90);
+        zofka.move(druhyRozmer/2);
+        zofka.turnLeft(135);
+        nakresliPravouhlyRovnoramennyTrojuhelnik(druhyRozmer/2, prvniRozmer);
+        //kola
+        zofka.penUp();
+        zofka.turnLeft(45);
+        zofka.move(druhyRozmer/2);
+        zofka.move(prvniRozmer/5);
+        nakresliKruznici(prvniRozmer/4);
+        zofka.penUp();
+        zofka.move(prvniRozmer/2);
+        zofka.move(prvniRozmer/5);
+        nakresliKruznici(prvniRozmer/4);
     }
 
     public void nakresliKruznici(double polomerKruznice) {
@@ -110,7 +155,8 @@ public class HlavniProgram {
     }
 
     public void nakresliObdelnik (double delkaObdelniku, double vyskaObdelniku) {
-        //obdelnik se kresli od praveho dolniho rohu, Zofka konci v pozici, v jake zacinala, otocena nahoru
+        //obdelnik se kresli od praveho dolniho rohu nahoru (tzn. zacina se vyskou),
+        // Zofka konci v pozici, v jake zacinala, otocena nahoru
         zofka.penDown();
         for (int i = 0; i < 2; i++) {
             zofka.move(vyskaObdelniku);
